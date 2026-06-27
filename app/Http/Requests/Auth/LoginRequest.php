@@ -49,12 +49,20 @@ class LoginRequest extends FormRequest
 
             if ($userExists) {
                 throw ValidationException::withMessages([
-                    'email' => 'You have already set your password. For the rest, kindly contact us at <a href="mailto:support@astryxacademy.com" class="font-semibold hover:underline text-indigo-700">support@astryxacademy.com</a>',
+                    'email' => 'You have already set your password for your enrolled courses. For reset it kindly contact us at <a href="mailto:support@astryxacademy.com" class="font-semibold hover:underline text-indigo-700">support@astryxacademy.com</a>',
                 ]);
             }
 
             throw ValidationException::withMessages([
                 'email' => 'You have not enrolled. Check courses at <a href="https://www.astryxacademy.com/#courses" target="_blank" class="font-semibold hover:underline text-indigo-700">www.astryxacademy.com</a>',
+            ]);
+        }
+
+        if (Auth::user()->role !== 'admin') {
+            Auth::logout();
+            
+            throw ValidationException::withMessages([
+                'email' => 'You have already set your password for your enrolled courses. For reset it kindly contact us at <a href="mailto:support@astryxacademy.com" class="font-semibold hover:underline text-indigo-700">support@astryxacademy.com</a>',
             ]);
         }
 

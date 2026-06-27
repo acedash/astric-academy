@@ -15,31 +15,86 @@
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body class="font-sans antialiased bg-gray-100 flex h-screen overflow-hidden">
+<body class="font-sans antialiased bg-[#FAFAFA] flex h-screen overflow-hidden text-sm">
+    
     <!-- Sidebar -->
-    <aside class="w-64 bg-gray-900 text-white flex flex-col h-full shadow-lg z-20">
-        <div class="flex items-center justify-center h-20 border-b border-gray-700 bg-white">
-            <img src="{{ asset('images/logo-1.jpeg') }}" alt="Astryx Academy" class="h-14 object-contain mix-blend-multiply">
+    <aside class="w-64 bg-[#0B132B] text-gray-400 flex flex-col h-full shadow-2xl z-20 transition-all duration-300">
+        
+        <!-- Logo Area -->
+        <div class="flex items-center justify-center h-[72px] px-6 border-b border-white/10">
+            <!-- Using invert and mix-blend-screen to make the white logo look perfect on a dark bg -->
+            <img src="{{ asset('images/logo-1.jpeg') }}" alt="Astryx Academy" class="h-10 object-contain filter invert mix-blend-screen opacity-90">
         </div>
-        <nav class="flex-1 px-4 py-6 space-y-2">
-            <a href="{{ route('admin.dashboard') }}" class="{{ request()->routeIs('admin.dashboard') ? 'bg-indigo-600' : 'hover:bg-gray-800' }} flex items-center gap-3 px-4 py-3 rounded-xl transition">
-                <i class="fas fa-chart-pie w-5"></i>
+        
+        <!-- Navigation -->
+        <nav class="flex-1 overflow-y-auto py-6 space-y-1.5 px-4 scrollbar-hide">
+            <a href="{{ route('admin.dashboard') }}" class="{{ request()->routeIs('admin.dashboard') ? 'bg-blue-600 text-white shadow-md' : 'hover:bg-white/5 hover:text-white' }} flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200">
+                <i class="fas fa-home w-5 text-center text-lg {{ request()->routeIs('admin.dashboard') ? 'text-white' : 'text-gray-500' }}"></i>
                 <span class="font-medium">Dashboard</span>
             </a>
-            <a href="{{ route('admin.courses.index') }}" class="{{ request()->routeIs('admin.courses.*') ? 'bg-indigo-600' : 'hover:bg-gray-800' }} flex items-center gap-3 px-4 py-3 rounded-xl transition">
-                <i class="fas fa-book-open w-5"></i>
-                <span class="font-medium">Manage Courses</span>
+            
+            <a href="{{ route('admin.users.index') }}" class="{{ request()->routeIs('admin.users.*') ? 'bg-blue-600 text-white shadow-md' : 'hover:bg-white/5 hover:text-white' }} flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200">
+                <i class="fas fa-user-graduate w-5 text-center text-lg {{ request()->routeIs('admin.users.*') ? 'text-white' : 'text-gray-500' }}"></i>
+                <span class="font-medium">Students</span>
             </a>
-            <a href="{{ route('admin.users.index') }}" class="{{ request()->routeIs('admin.users.*') ? 'bg-indigo-600' : 'hover:bg-gray-800' }} flex items-center gap-3 px-4 py-3 rounded-xl transition">
-                <i class="fas fa-users w-5"></i>
-                <span class="font-medium">Manage Students</span>
+            
+            <a href="{{ route('admin.courses.index') }}" class="{{ request()->routeIs('admin.courses.*') ? 'bg-blue-600 text-white shadow-md' : 'hover:bg-white/5 hover:text-white' }} flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200">
+                <i class="fas fa-book w-5 text-center text-lg {{ request()->routeIs('admin.courses.*') ? 'text-white' : 'text-gray-500' }}"></i>
+                <span class="font-medium">Courses</span>
+            </a>
+            
+            <a href="{{ route('admin.enrollments.index') }}" class="{{ request()->routeIs('admin.enrollments.*') ? 'bg-blue-600 text-white shadow-md' : 'hover:bg-white/5 hover:text-white' }} flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200">
+                <i class="fas fa-laptop-code w-5 text-center text-lg {{ request()->routeIs('admin.enrollments.*') ? 'text-white' : 'text-gray-500' }}"></i>
+                <span class="font-medium">Enrolled Courses</span>
+            </a>
+            
+            <a href="#" class="hover:bg-white/5 hover:text-white flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200">
+                <i class="fas fa-tasks w-5 text-center text-lg text-gray-500"></i>
+                <span class="font-medium">Assignments</span>
+            </a>
+            
+            <a href="#" class="hover:bg-white/5 hover:text-white flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200">
+                <i class="fas fa-certificate w-5 text-center text-lg text-gray-500"></i>
+                <span class="font-medium">Certificates</span>
+            </a>
+            
+            <a href="#" class="hover:bg-white/5 hover:text-white flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200">
+                <i class="fas fa-credit-card w-5 text-center text-lg text-gray-500"></i>
+                <span class="font-medium">Payments</span>
+            </a>
+            
+            <a href="#" class="hover:bg-white/5 hover:text-white flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200">
+                <i class="fas fa-star w-5 text-center text-lg text-gray-500"></i>
+                <span class="font-medium">Reviews</span>
+            </a>
+            
+            <a href="#" class="hover:bg-white/5 hover:text-white flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200">
+                <i class="fas fa-chart-bar w-5 text-center text-lg text-gray-500"></i>
+                <span class="font-medium">Reports</span>
+            </a>
+            
+            <a href="#" class="hover:bg-white/5 hover:text-white flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200">
+                <i class="fas fa-ticket-alt w-5 text-center text-lg text-gray-500"></i>
+                <span class="font-medium">Coupons</span>
+            </a>
+            
+            <a href="#" class="hover:bg-white/5 hover:text-white flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200">
+                <i class="fas fa-bullhorn w-5 text-center text-lg text-gray-500"></i>
+                <span class="font-medium">Announcements</span>
+            </a>
+            
+            <a href="#" class="hover:bg-white/5 hover:text-white flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200 mt-4">
+                <i class="fas fa-cog w-5 text-center text-lg text-gray-500"></i>
+                <span class="font-medium">Settings</span>
             </a>
         </nav>
-        <div class="p-4 border-t border-gray-700">
+        
+        <!-- Logout -->
+        <div class="p-4 border-t border-white/10">
             <form method="POST" action="{{ route('logout') }}">
                 @csrf
-                <button type="submit" class="flex items-center gap-3 px-4 py-3 w-full text-left hover:bg-gray-800 rounded-xl transition text-gray-300">
-                    <i class="fas fa-sign-out-alt w-5"></i>
+                <button type="submit" class="flex items-center gap-3 px-4 py-3 w-full text-left hover:bg-white/5 hover:text-white rounded-lg transition-all duration-200">
+                    <i class="fas fa-sign-out-alt w-5 text-center text-lg text-gray-500"></i>
                     <span class="font-medium">Logout</span>
                 </button>
             </form>
@@ -47,36 +102,90 @@
     </aside>
 
     <!-- Main Content -->
-    <div class="flex-1 flex flex-col h-full relative z-10 overflow-hidden">
+    <div class="flex-1 flex flex-col h-full relative z-10 overflow-hidden bg-[#FAFAFA]">
+        
         <!-- Top Header -->
-        <header class="h-20 bg-white border-b border-gray-200 flex items-center justify-between px-8 shadow-sm">
-            <h2 class="text-xl font-semibold text-gray-800">
-                @yield('header')
-            </h2>
-            <div class="flex items-center gap-4">
-                <span class="text-sm font-medium text-gray-600">Admin: {{ Auth::user()->name }}</span>
-                <div class="w-10 h-10 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-700 font-bold">
-                    {{ substr(Auth::user()->name, 0, 1) }}
+        <header class="h-[72px] bg-white border-b border-gray-200 flex items-center justify-between px-6 lg:px-8 shadow-sm shrink-0">
+            <!-- Left Header Area (Hamburger for mobile) -->
+            <div class="flex items-center gap-4 flex-1">
+                <button class="text-gray-400 hover:text-gray-600 transition md:hidden">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+                <!-- Optional: Mobile Title could go here -->
+            </div>
+
+            <!-- Right Actions -->
+            <div class="flex items-center justify-end gap-5 sm:gap-8 flex-1">
+                
+                <!-- Search Box -->
+                <div class="relative hidden lg:block w-72">
+                    <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                        <i class="fas fa-search text-gray-400 text-sm"></i>
+                    </div>
+                    <input type="text" class="w-full pl-10 pr-4 py-2 bg-gray-50 border border-gray-200 text-gray-700 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 transition-all placeholder-gray-400 focus:bg-white" placeholder="Search students, courses, email...">
+                </div>
+
+                <!-- Notifications -->
+                <button class="relative text-gray-500 hover:text-blue-600 transition">
+                    <i class="far fa-bell text-xl"></i>
+                    <span class="absolute top-0 right-0 block h-2 w-2 rounded-full bg-red-500 border-2 border-white box-content transform translate-x-1 -translate-y-1"></span>
+                </button>
+
+                <!-- Profile -->
+                <div class="flex items-center gap-3 cursor-pointer pl-2 sm:pl-4 border-l border-gray-200">
+                    <div class="hidden sm:block text-right">
+                        <p class="text-sm font-semibold text-gray-800 leading-none mb-1">{{ Auth::user()->name }}</p>
+                        <p class="text-xs text-gray-500 leading-none">Administrator</p>
+                    </div>
+                    <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-700 font-bold shadow-sm border border-blue-200">
+                        {{ substr(Auth::user()->name, 0, 1) }}
+                    </div>
+                    <i class="fas fa-chevron-down text-gray-400 text-xs ml-1 hidden sm:block"></i>
                 </div>
             </div>
         </header>
 
-        <!-- Page Content -->
-        <main class="flex-1 overflow-y-auto p-8">
-            @if(session('success'))
-                <div class="mb-6 p-4 rounded-xl bg-green-50 border border-green-200 text-green-700 flex items-center gap-3">
-                    <i class="fas fa-check-circle"></i>
-                    <p class="font-medium">{{ session('success') }}</p>
+        <!-- Page Content Scroll Area -->
+        <main class="flex-1 overflow-y-auto">
+            <!-- Page Title Area -->
+            <div class="px-6 lg:px-8 py-6 max-w-7xl mx-auto w-full">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+                    <div>
+                        <h2 class="text-2xl font-bold text-gray-900">
+                            @yield('header')
+                        </h2>
+                        <div class="flex items-center text-sm text-gray-500 mt-1">
+                            <a href="{{ route('admin.dashboard') }}" class="hover:text-blue-600 transition">Dashboard</a>
+                            <i class="fas fa-chevron-right text-xs mx-2 text-gray-400"></i>
+                            <span class="text-gray-900 font-medium">@yield('header')</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Optional action button area for specific pages (like the Export button in the screenshot) -->
+                    @hasSection('header_actions')
+                        <div>
+                            @yield('header_actions')
+                        </div>
+                    @endif
                 </div>
-            @endif
-            @if(session('error'))
-                <div class="mb-6 p-4 rounded-xl bg-red-50 border border-red-200 text-red-700 flex items-center gap-3">
-                    <i class="fas fa-exclamation-circle"></i>
-                    <p class="font-medium">{{ session('error') }}</p>
-                </div>
-            @endif
 
-            @yield('content')
+                <!-- Flash Messages -->
+                @if(session('success'))
+                    <div class="mb-6 p-4 rounded-xl bg-green-50 border border-green-200 text-green-700 flex items-center gap-3 shadow-sm">
+                        <i class="fas fa-check-circle text-lg"></i>
+                        <p class="font-medium">{{ session('success') }}</p>
+                    </div>
+                @endif
+                @if(session('error'))
+                    <div class="mb-6 p-4 rounded-xl bg-red-50 border border-red-200 text-red-700 flex items-center gap-3 shadow-sm">
+                        <i class="fas fa-exclamation-circle text-lg"></i>
+                        <p class="font-medium">{{ session('error') }}</p>
+                    </div>
+                @endif
+
+                <!-- Dynamic Page Content -->
+                @yield('content')
+            </div>
         </main>
     </div>
 </body>

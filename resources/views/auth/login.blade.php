@@ -1,33 +1,33 @@
 <x-guest-layout>
     <!-- Header -->
-    <header class="w-full flex justify-between items-center px-8 py-6">
-        <div>
-            <img src="{{ asset('images/logo-1.jpeg') }}" alt="Astryx Academy" class="h-16 object-contain mix-blend-multiply">
+    <header class="w-full flex justify-between items-center px-4 sm:px-8 py-4 sm:py-6">
+        <div class="flex-shrink-0">
+            <img src="{{ asset('images/logo-1.jpeg') }}" alt="Astryx Academy" class="h-10 sm:h-16 object-contain mix-blend-multiply">
         </div>
-        <div class="flex items-center text-gray-600 text-sm">
-            <i class="fas fa-headset text-xl mr-2 text-indigo-600"></i>
-            <div>
-                <p class="font-semibold text-gray-900">Need Help?</p>
-                <a href="mailto:support@astryxacademy.com" class="text-gray-500 hover:text-indigo-600 transition">support@astryxacademy.com</a>
+        <div class="flex items-center text-gray-600 text-xs sm:text-sm text-right sm:text-left">
+            <i class="fas fa-headset text-base sm:text-xl mr-2 sm:mr-3 text-indigo-600"></i>
+            <div class="text-left">
+                <p class="font-semibold text-gray-900 leading-none sm:leading-normal mb-0.5 sm:mb-0">Need Help?</p>
+                <a href="mailto:support@astryxacademy.com" class="text-gray-500 hover:text-indigo-600 transition leading-none sm:leading-normal">support@astryxacademy.com</a>
             </div>
         </div>
     </header>
 
     <!-- Main Content -->
-    <main class="w-full max-w-[90rem] mx-auto px-4 sm:px-8 lg:px-12 py-10 flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-16">
+    <main class="w-full max-w-[90rem] mx-auto px-4 sm:px-8 lg:px-12 py-6 sm:py-10 flex flex-col-reverse lg:flex-row items-stretch lg:items-center justify-between gap-8 sm:gap-12 lg:gap-16">
         
         <!-- Left Side: Branding & Info -->
-        <div class="w-full lg:w-3/5 relative bg-white/40 rounded-3xl p-8 lg:p-14 overflow-hidden shadow-sm border border-white/50 backdrop-blur-md">
+        <div class="w-full lg:w-3/5 relative bg-white/40 rounded-3xl p-6 sm:p-8 lg:p-14 overflow-hidden shadow-sm border border-white/50 backdrop-blur-md">
             <!-- Decorative background elements -->
             <div class="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 rounded-full bg-purple-100 opacity-50 blur-3xl"></div>
             <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-blue-100 opacity-50 blur-3xl"></div>
 
             <div class="relative z-10">
-                <h1 class="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-4">
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-4">
                     Welcome to <br>
                     <span class="text-indigo-600">Astryx Academy</span>
                 </h1>
-                <p class="text-gray-600 text-lg mb-10 max-w-md">
+                <p class="text-gray-600 text-base sm:text-lg mb-8 sm:mb-10 max-w-md">
                     Your journey to mastering skills starts here. Access your courses, track your progress and achieve your goals with us.
                 </p>
 
@@ -85,10 +85,10 @@
 
         <!-- Right Side: Login Form -->
         <div class="w-full lg:w-2/5 max-w-xl mx-auto relative z-10">
-            <div class="bg-white rounded-[2rem] p-8 lg:p-12 shadow-[0_8px_30px_rgb(0,0,0,0.08)] border border-gray-100">
-                <div class="text-center mb-8">
-                    <h2 class="text-2xl font-bold text-gray-900 mb-2">Student Portal Login</h2>
-                    <p class="text-gray-500 text-sm">Welcome back! Please log in with your email and password.</p>
+            <div class="bg-white rounded-[2rem] p-6 sm:p-8 lg:p-12 shadow-[0_8px_30px_rgb(0,0,0,0.08)] border border-gray-100">
+                <div class="text-center mb-6 sm:mb-8">
+                    <h2 class="text-xl sm:text-2xl font-bold text-gray-900 mb-2">Student Portal Login</h2>
+                    <p class="text-gray-500 text-xs sm:text-sm">Welcome back! Please log in with your email and password.</p>
                 </div>
 
                 <!-- Session Status -->
