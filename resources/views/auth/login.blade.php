@@ -76,9 +76,9 @@
                             <p class="text-blue-100 text-xs sm:text-sm mt-1">Join thousands of students who are building their future with Astryx Academy.</p>
                         </div>
                     </div>
-                    <button class="mt-4 sm:mt-0 px-5 py-2.5 bg-white text-[#2e407b] font-medium rounded-lg text-sm whitespace-nowrap hover:bg-gray-50 transition relative z-10 shadow-sm flex items-center">
+                    <a href="https://astryxacademy.com/#courses" class="mt-4 sm:mt-0 px-5 py-2.5 bg-white text-[#2e407b] font-medium rounded-lg text-sm whitespace-nowrap hover:bg-gray-50 transition relative z-10 shadow-sm flex items-center">
                         Explore Courses <i class="fas fa-arrow-right ml-2 text-xs"></i>
-                    </button>
+                    </a>
                 </div>
             </div>
         </div>
