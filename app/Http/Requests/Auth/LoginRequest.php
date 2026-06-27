@@ -45,6 +45,14 @@ class LoginRequest extends FormRequest
         if (! Auth::attempt($this->only('email', 'password'), $this->boolean('remember'))) {
             RateLimiter::hit($this->throttleKey());
 
+            $userExists = \App\Models\User::where('email', $this->email)->exists();
+
+            if ($userExists) {
+                throw ValidationException::withMessages([
+                    'email' => 'You have already set your password. For the rest, kindly contact us at support@astryxacademy.com',
+                ]);
+            }
+
             throw ValidationException::withMessages([
                 'email' => 'you have not enrolled check courses at https://www.astryxacademy.com/',
             ]);
