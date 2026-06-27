@@ -29,7 +29,7 @@ class LoginRequest extends FormRequest
     {
         return [
             'email' => ['required', 'string', 'email'],
-            'password' => ['required', 'string'],
+            'password' => ['nullable', 'string'],
         ];
     }
 
@@ -49,12 +49,12 @@ class LoginRequest extends FormRequest
 
             if ($userExists) {
                 throw ValidationException::withMessages([
-                    'email' => 'You have already set your password. For the rest, kindly contact us at support@astryxacademy.com',
+                    'email' => 'You have already set your password. For the rest, kindly contact us at <a href="mailto:support@astryxacademy.com" class="font-semibold hover:underline text-indigo-700">support@astryxacademy.com</a>',
                 ]);
             }
 
             throw ValidationException::withMessages([
-                'email' => 'you have not enrolled check courses at https://www.astryxacademy.com/',
+                'email' => 'You have not enrolled. Check courses at <a href="https://www.astryxacademy.com/#courses" target="_blank" class="font-semibold hover:underline text-indigo-700">www.astryxacademy.com</a>',
             ]);
         }
 

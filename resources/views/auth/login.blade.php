@@ -105,7 +105,14 @@
                             <input id="email" type="email" name="email" value="{{ old('email') }}" required autofocus
                                 class="w-full pl-11 pr-4 py-3.5 bg-white border border-gray-200 text-gray-900 text-sm rounded-xl focus:ring-indigo-500 focus:border-indigo-500" placeholder="Enter your email">
                         </div>
-                        <x-input-error :messages="$errors->get('email')" class="mt-2" />
+                        @if($errors->has('email'))
+                            <div class="mt-3 bg-blue-50 rounded-xl p-4 flex items-start gap-3 border border-blue-100">
+                                <i class="fas fa-info-circle text-blue-500 mt-0.5 text-lg"></i>
+                                <p class="text-sm font-medium text-blue-800 leading-relaxed">
+                                    {!! $errors->first('email') !!}
+                                </p>
+                            </div>
+                        @endif
                     </div>
 
                     <div>
@@ -113,7 +120,7 @@
                             <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-gray-400">
                                 <i class="fas fa-lock"></i>
                             </div>
-                            <input id="password" type="password" name="password" required autocomplete="current-password"
+                            <input id="password" type="password" name="password" autocomplete="current-password"
                                 class="w-full pl-11 pr-11 py-3.5 bg-white border border-gray-200 text-gray-900 text-sm rounded-xl focus:ring-indigo-500 focus:border-indigo-500" placeholder="Enter your password">
                             <div class="absolute inset-y-0 right-0 pr-4 flex items-center text-gray-400 cursor-pointer hover:text-gray-600">
                                 <i class="far fa-eye-slash"></i>
