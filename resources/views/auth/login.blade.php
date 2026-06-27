@@ -140,12 +140,6 @@
                     </button>
                 </form>
 
-                <div class="mt-8 bg-blue-50 rounded-xl p-4 flex items-start gap-3 border border-blue-100">
-                    <i class="fas fa-info-circle text-blue-500 mt-0.5"></i>
-                    <p class="text-xs text-blue-800 leading-relaxed">
-                        If you have already set your password, for the rest kindly contact us at <a href="mailto:support@astryxacademy.com" class="font-semibold hover:underline">support@astryxacademy.com</a>
-                    </p>
-                </div>
             </div>
         </div>
     </main>

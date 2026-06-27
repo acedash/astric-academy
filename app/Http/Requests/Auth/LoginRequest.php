@@ -46,7 +46,7 @@ class LoginRequest extends FormRequest
             RateLimiter::hit($this->throttleKey());
 
             throw ValidationException::withMessages([
-                'email' => 'These credentials do not match our records. If you are not registered, you need to purchase a course from https://www.astryxacademy.com/#courses',
+                'email' => 'you have not enrolled check courses at https://www.astryxacademy.com/',
             ]);
         }
 
