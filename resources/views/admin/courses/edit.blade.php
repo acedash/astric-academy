@@ -27,15 +27,28 @@
             @error('description') <p class="mt-1 text-sm text-red-600">{{ $message }}</p> @enderror
         </div>
 
-        <div>
-            <label class="block text-sm font-medium text-gray-700 mb-1">Price (USD)</label>
-            <div class="relative">
-                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                    <span class="text-gray-500 sm:text-sm">$</span>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Price (USD)</label>
+                <div class="relative">
+                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                        <span class="text-gray-500 sm:text-sm">$</span>
+                    </div>
+                    <input type="number" name="price" step="0.01" min="0" required value="{{ old('price', $course->price) }}" class="w-full pl-7 rounded-lg border-gray-300 focus:ring-indigo-500 focus:border-indigo-500">
                 </div>
-                <input type="number" name="price" step="0.01" min="0" required value="{{ old('price', $course->price) }}" class="w-full pl-7 rounded-lg border-gray-300 focus:ring-indigo-500 focus:border-indigo-500">
+                @error('price') <p class="mt-1 text-sm text-red-600">{{ $message }}</p> @enderror
             </div>
-            @error('price') <p class="mt-1 text-sm text-red-600">{{ $message }}</p> @enderror
+            
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Number of Tools</label>
+                <div class="relative">
+                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                        <i class="fas fa-tools text-gray-400"></i>
+                    </div>
+                    <input type="number" name="tools_count" min="0" required value="{{ old('tools_count', $course->tools_count ?? 0) }}" class="w-full pl-9 rounded-lg border-gray-300 focus:ring-indigo-500 focus:border-indigo-500">
+                </div>
+                @error('tools_count') <p class="mt-1 text-sm text-red-600">{{ $message }}</p> @enderror
+            </div>
         </div>
 
         <div class="flex justify-end gap-3 pt-6">

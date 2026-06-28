@@ -30,4 +30,30 @@ class AdminEnrollmentController extends Controller
             'cancelled'
         ));
     }
+    public function create()
+    {
+        $students = User::where('role', 'student')->get();
+        $courses = Course::all();
+        return view('admin.enrollments.create', compact('students', 'courses'));
+    }
+
+    public function store(Request $request)
+    {
+        $request->validate([
+            'user_id' => 'required|exists:users,id',
+            'course_id' => 'required|exists:courses,id'
+        ]);
+
+        $user = User::findOrFail($request->user_id);
+        $user->courses()->syncWithoutDetaching([$request->course_id]);
+
+        return redirect()->route('admin.enrollments.index')->with('success', 'Student enrolled successfully.');
+    }
+
+    public function destroy(User $user, Course $course)
+    {
+        $user->courses()->detach($course->id);
+        
+        return redirect()->route('admin.enrollments.index')->with('success', 'Enrollment revoked successfully.');
+    }
 }
