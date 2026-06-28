@@ -58,13 +58,6 @@ class LoginRequest extends FormRequest
             ]);
         }
 
-        if (Auth::user()->role !== 'admin') {
-            Auth::logout();
-            
-            throw ValidationException::withMessages([
-                'email' => 'You have already set your password for your enrolled courses. For reset it kindly contact us at <a href="mailto:support@astryxacademy.com" class="font-semibold hover:underline text-indigo-700">support@astryxacademy.com</a>',
-            ]);
-        }
 
         RateLimiter::clear($this->throttleKey());
     }

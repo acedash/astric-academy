@@ -68,7 +68,7 @@
                 </div>
                 
                 <!-- Action Button -->
-                <a href="#" class="block w-full text-center py-3 px-4 bg-gray-50 hover:bg-indigo-600 text-gray-700 hover:text-white font-semibold rounded-xl transition-colors duration-300 border border-gray-200 hover:border-indigo-600">
+                <a href="{{ route('student.courses.show', $course->id) }}" class="block w-full text-center py-3 px-4 bg-gray-50 hover:bg-indigo-600 text-gray-700 hover:text-white font-semibold rounded-xl transition-colors duration-300 border border-gray-200 hover:border-indigo-600">
                     Start Learning
                 </a>
             </div>
