@@ -41,3 +41,7 @@ Route::middleware(['auth', 'is_admin'])->prefix('admin')->name('admin.')->group(
     Route::put('/courses/{course}/lessons/{lesson}', [\App\Http\Controllers\Admin\AdminLessonController::class, 'update'])->name('courses.lessons.update');
     Route::delete('/courses/{course}/lessons/{lesson}', [\App\Http\Controllers\Admin\AdminLessonController::class, 'destroy'])->name('courses.lessons.destroy');
 });
+
+Route::middleware(['auth'])->prefix('student')->name('student.')->group(function () {
+    Route::get('/dashboard', [\App\Http\Controllers\Student\StudentDashboardController::class, 'index'])->name('dashboard');
+});

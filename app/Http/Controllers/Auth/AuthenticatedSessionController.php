@@ -32,11 +32,8 @@ class AuthenticatedSessionController extends Controller
             return redirect()->intended(route('admin.dashboard', absolute: false));
         }
 
-        Auth::guard('web')->logout();
-        $request->session()->invalidate();
-        $request->session()->regenerateToken();
-
-        return redirect()->route('login')->with('status', 'You have already set your password. For the rest, kindly contact us at support@astryxacademy.com');
+        // It's a student
+        return redirect()->intended(route('student.dashboard', absolute: false));
     }
 
     /**
