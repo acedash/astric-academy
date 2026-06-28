@@ -106,9 +106,9 @@
                                 class="w-full pl-11 pr-4 py-3.5 bg-white border border-gray-200 text-gray-900 text-sm rounded-xl focus:ring-indigo-500 focus:border-indigo-500" placeholder="Enter your email">
                         </div>
                         @if($errors->has('email'))
-                            <div class="mt-3 bg-blue-50 rounded-xl p-4 flex items-start gap-3 border border-blue-100">
-                                <i class="fas fa-info-circle text-blue-500 mt-0.5 text-lg"></i>
-                                <p class="text-sm font-medium text-blue-800 leading-relaxed">
+                            <div class="mt-3 bg-red-50 rounded-xl p-4 flex items-start gap-3 border border-red-100">
+                                <i class="fas fa-exclamation-circle text-red-500 mt-0.5 text-lg"></i>
+                                <p class="text-sm font-medium text-red-800 leading-relaxed">
                                     {!! $errors->first('email') !!}
                                 </p>
                             </div>

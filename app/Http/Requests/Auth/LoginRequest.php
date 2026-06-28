@@ -49,12 +49,12 @@ class LoginRequest extends FormRequest
 
             if ($userExists) {
                 throw ValidationException::withMessages([
-                    'email' => 'You have already set your password for your enrolled courses. For reset it kindly contact us at <a href="mailto:support@astryxacademy.com" class="font-semibold hover:underline text-indigo-700">support@astryxacademy.com</a>',
+                    'email' => 'Incorrect password. If you forgot your password, please reset it or contact support.',
                 ]);
             }
 
             throw ValidationException::withMessages([
-                'email' => 'You have not enrolled. Check courses at <a href="https://www.astryxacademy.com/#courses" target="_blank" class="font-semibold hover:underline text-indigo-700">www.astryxacademy.com</a>',
+                'email' => 'Please enter a valid email.',
             ]);
         }
 
