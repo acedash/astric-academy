@@ -34,6 +34,19 @@ class LoginRequest extends FormRequest
     }
 
     /**
+     * Get custom messages for validator errors.
+     *
+     * @return array
+     */
+    public function messages(): array
+    {
+        return [
+            'email.email' => 'Please enter a valid email.',
+            'email.required' => 'Please enter a valid email.',
+        ];
+    }
+
+    /**
      * Attempt to authenticate the request's credentials.
      *
      * @throws ValidationException
@@ -54,7 +67,7 @@ class LoginRequest extends FormRequest
             }
 
             throw ValidationException::withMessages([
-                'email' => 'Please enter a valid email.',
+                'email' => 'You have not enrolled. Check courses at <a href="https://www.astryxacademy.com/#courses" target="_blank" class="font-semibold hover:underline text-indigo-700">www.astryxacademy.com</a>',
             ]);
         }
 
