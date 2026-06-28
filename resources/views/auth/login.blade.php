@@ -152,19 +152,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="w-full py-6 px-8 border-t border-gray-200 mt-auto flex flex-col sm:flex-row justify-between items-center text-sm text-gray-500">
+    <footer class="w-full py-6 px-8 border-t border-gray-200 mt-auto flex justify-center items-center text-sm text-gray-500">
         <p>&copy; 2026 Astryx Academy. All rights reserved.</p>
-        <div class="flex items-center gap-6 mt-4 sm:mt-0">
-            <a href="#" class="hover:text-gray-900 transition">Privacy Policy</a>
-            <span class="text-gray-300">|</span>
-            <a href="#" class="hover:text-gray-900 transition">Terms of Use</a>
-        </div>
-        <div class="flex items-center gap-4 mt-4 sm:mt-0">
-            <span class="mr-2">Follow us:</span>
-            <a href="#" class="text-gray-400 hover:text-indigo-600 transition"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="text-gray-400 hover:text-indigo-600 transition"><i class="fab fa-instagram"></i></a>
-            <a href="#" class="text-gray-400 hover:text-indigo-600 transition"><i class="fab fa-youtube"></i></a>
-            <a href="#" class="text-gray-400 hover:text-indigo-600 transition"><i class="fab fa-linkedin-in"></i></a>
-        </div>
     </footer>
 </x-guest-layout>
